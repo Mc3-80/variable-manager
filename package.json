@@ -1,0 +1,54 @@
+{
+  "name": "variable-manager",
+  "displayName": "Variable Manager",
+  "description": "Organize variables into groups and display them in the sidebar.",
+  "version": "1.0.0",
+  "publisher": "Mc-dev-80",
+  "icon": "int2.png",
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:variableSidebar"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "views": {
+      "variable-view":[
+        {
+          "id": "variableSidebar",
+          "name": "variableManagerSidebar"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "variable-view",
+          "title": "Variable-Manager",
+          "icon": "int.svg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.140.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "eslint": "^10.5.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
